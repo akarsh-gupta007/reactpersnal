@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Concept
+    <b>Differentiate between stateful and stateless components.</b>
+
+    <li> stateful comp. is also called as class comp. and stateless comp. is also called as functional comp.</li>
+    <li> In stateless components, the props are displayed like {props.name} but in stateful components, the props and
+        state are rendered like {this.props.name} and {this.state.name}</li>
+    <li> A stateless component renders output which depends upon props value, but a stateful component render depends
+        upon the value of the state.</li>
+    <li> Stateful Protocols require the server to save the state of a process. Stateless Protocols do not need the
+        server to save the state of a process.</li>
+    <li> Stateful expects a response and if no answer is received, the request is resent. In stateless, the client sends
+        a request to a server, which the server responds to based on the state of the request.</li>
+    <li> The server is required to store and save status information and details of sessions. No server is needed for
+        data storage.</li>
+    <li> They are logically heavy to implement. They are easy to implement.</li>
+    <li> It is difficult to code as one of the salient features here is data storage. It is much easier to code.</li>
+
+
+    <b>What is React? What are its features</b>
+    <li>
+        React is a JavaScript library of reusable components designed to create skeletons of the apps,
+
+    </li>
+    <li>
+        features:
+    <li>
+        It uses Jsx.
+        Virtual Dom
+        components
+        performance
+    </li>
+    </li>
+    <b>What is Single Page Application or SPA? Explain the difference between SPA and MPA
+    </b>
+    <li>
+
+        SPA is that kind of application where the user clicks some links and the data of the page gets updated but the
+        page doesn't reload. Only the content of the page gets updated and the user stays on the same page for the whole
+        application.
+        or
+        A single-page application (SPA) is a web application or web site that interacts with the user by dynamically
+        rewriting the current page rather than loading entire new pages from a server
+    </li>
+    <b>How to create Reusable components in React?</b>
+
+    <li>by the help of props we can use.</li>
+
+    <b>Explain props drilling concept and state uplifting</b>
+    <li>
+        <b>prop drilling </b>
+        props=>Components in React can be passed some parameters. These parameters are generally named props.
+        Prop drilling is basically a situation when the same data is being sent at almost every level due to
+        requirements in the final level.
+        <hr>.</hr>
+        <b>state uplifting</b>
+        every component in React has its own state. Because of this sometimes data can be redundant and inconsistent.
+        So, by Lifting up the state we make the state of the parent component as a single source of truth and pass the
+        data of the parent in its children.
+        If we have 2 components in our App. A -> B where, A is parent of B. keeping the same data in both Component A
+        and B might cause inconsistency of data.
+        If we have 3 components in our App.
+        Where A is the parent of B and C. In this case, If there is some Data only in component B but, component C also
+        wants that data. We know Component C cannot access the data because a component can talk only to its parent or
+        child (Not cousins).
+        To solve this, we will Lift the state of component B and component C to component A.
+    </li>
+    <b>Differentiate between states and props.</b>
+    <li>
+        <img src="https://qph.fs.quoracdn.net/main-qimg-1cbd0be160033f80a5dde57871acb614" />
+    </li>
+    <li><b> What are React Life cycles Explain each one with Example</b></li>
+    <ul>
+        <li>The react lifecycle method is used in the React class component. It helps us in creating our state and
+            mutating them. </li>
+        <li>Each component in React has a lifecycle that goes through three main phases Mounting, Updating, and
+            Unmounting.</li>
+
+
+        <li>The mounting means to put elements into the DOM. React uses virtual DOM to put all the elements into the
+            memory. It has four built-in methods to mount a component namely</li>
+        <pre>
+  constructor()
+  getDerivedStateFromProps()
+  render()
+  componentDidMount() 
+</pre>
+
+        <li><b>updating</b></li>
+        <li>This is the second phase of the React lifecycle. A component is updated when there is a change in state and
+            props React basically has five built-in methods that are called while updating the components.</li>
+        <pre>
+  getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+</pre>
+
+        <li><b>unmounting</b></li>
+        <li>The final or the end of the react lifecycle is Unmounting. This is used when a component is removed from the
+            DOM. React has only one built-in method that gets called when a component is unmounted i.e.
+            componentWillUnmount()</li>
+
+        <li>sumurry</li>
+        <li>The constructor() method is the best place to initialize our state</li>
+        <li>The getDerivedStateFromProps() is a rarely used lifecycle method and is the best place to set the state
+            object based on the initial props.</li>
+        <li>The shouldComponentUpdate() specifies whether React should continue with the rendering or not.</li>
+        <li>The render() method is the most used and compulsory lifecycle method.</li>
+        <li>The getSnapshotBeforeUpdate() method has access to the props and state even after the update.</li>
+        <li>The componentDidMount() is the most common and widely used lifecycle method and is called after the
+            component is rendered. You can also use this method to call external data from the API.</li>
+        <li>The componentDidUpdate() method is called after the component is updated in the DOM and is the best place in
+            updating the DOM in response to the change of props and state.</li>
+        <li>The componentWillUnmount() happens just before the component unmounts and is destroyed and is used for
+            cleanup actions like canceling API calls.</li>
+
+    </ul>
+
+    <b> What are the three principles that Redux follows?</b>
+    <li>
+        <pre>
+Single source of truth​ ---The global state of your application is stored in an object tree within a single store. ...
+State is read-only​ --The only way to change the state is to emit an action, an object describing what happened. ...
+Changes are made with pure functions​
+    </pre>
+    </li>
+    <b>What is React Router?</b>
+    <li>
+        React Router is a standard library for routing in React. It enables the navigation among views of various
+        components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL
+    </li>
+    <b>
+        What do you know about controlled and uncontrolled components?
+    </b>
+    <li>
+        <pre>
+Uncontrolled Components
+An uncontrolled component is a component that renders form elements,
+ where the form element's data is handled by the DOM (default DOM behavior).
+ To access the input's DOM node and extract its value you can use a ref.
+</pre>
+        <pre>
+const { useRef } from 'react';
+
+function Example () {
+  const inputRef = useRef(null);
+  return input type="text" defaultValue="bar" ref={inputRef} 
+}
+</pre>
+    </li>
+    <b>Explain Virtual DOM</b>
+
+    <li>DOM is a document object model, created by converting HTML CSS and JS Real DOM, which is an object which gets
+        created whenever any React application gets loaded on the screen for the first time., whenever React components
+        gets mounted on the screen for the first time. Now when any user makes any changes on the screen like button
+        click because of which the state variable will get updated so in this case the changes will not directly go to
+        Real DOM , instead in react we have concept known Virtual DOM.</li>
+    <li>So we are having two virtual doms, one virtual dom gets created at the time of mounting of react component so it
+        is a copy of your real dom. Another virtual dom is the dom which contains the new changes, updated state
+        variables values. Now these two virtual doms will get compared with each other and will check for the new
+        changes. this complete procedure is known as diffing algorithm. Now the new changes will be updated in your Real
+        dom. this procedure is known as Recoinciliation.</li>
+    <li>we neeed them</li>
+    <ul>
+        <li>In earlier days when SPA wasn't much popular, rendering was done on the server-side. So for every user
+            interaction/request, the server will send a new page to render.
+
+            In the case of SPA, there will only one document and in that same document, all DOM manipulations will be
+            done. So for complex projects, many unoptimized DOM operations might be used.</li>
+    </ul>
+    <b>
+        Explain difference between Browser Route, Route, Routes
+    </b>
+    <li>
+        BrowserRouter: BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState
+        and the popstate event) to keep your UI in sync with the URL. It is the parent component that is used to store
+        all of the other components.
+    </li>
+    <li>
+        Route: Route is the conditionally shown component that renders some UI when its path matches the current URL.
+    </li>
+
+    <b>
+        What is the diff between class and functional components ?
+    </b>
+
+    <li>The class component extends to react component which has a render method and then it returns a JSX element while
+        the functional component is a plain javascript function that returns JSX. </li>
+    <li>In a class-based component, we have to use this keyword to access the prop or we can destructure it to get our
+        value from the prop</li>
+    <li>In a functional component, the prop is being passed directly as an argument to the function and we can now
+        access the prop by using prop.value.</li>
+    <li>class component uses life cycle method where as function method doesn't have life cycle method.</li>
+   
+
+    <li><b>What is UseState Hook </b></li>
+    <ul>
+    
+      <li>useStatehook is a special function which takes one argument. The argument passed to useState is initial state. It returns an array of two entries. The first element is the initial state and the second is a function which is used for updating state.</li>
+      <li>The React useState Hook allows us to track state in a function component.
+    
+        State generally refers to data or properties that need to be tracking in an application</li>
+    
+    
+    
+        <li>To use the useState Hook, we first need to import it into our component.</li>
+    
+      </ul>
+    
+    <li><b>useEffect</b></li>
+    <ul>
+      <li>
+        The hook useEffect is one of the important React hooks that you must know. It allows you to perform side effects in functional components whenever a change happens. So with the useEffect hook, you can do many things in React such as fetching data, working with the DOM, and much more.
+      </li>
+      <li>By default, the useEffect hook runs after the first render and after every update. React updates the DOM by the time it runs the effects.</li>
+    </ul>
+    <li>  What is UseReducer Hook</li>
+    <ul>
+      <li>The useReducer Hook is similar to the useState Hook.</li>
+      <li>If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.</li>
+      <li>The useReducer hook takes three arguments including reducer, initial state, and the function to load the initial state lazily.</li>
+    </ul>
+    
+    <h1>day3</h1>
+    <li>what is useMemo</li>
+    <ul>
+      <li>The useMemo is a hook used in the functional component of react that returns a memoized value. </li>
+      <li>The useMemo Hook only runs when one of its dependencies update.</li>
+      <li>This can improve performance.</li>
+      <li>The useMemo and useCallback Hooks are similar.</li>
+      <li>The main difference is that useMemo returns a memoized value and useCallback returns a memoized function.</li>
+    </ul>
+    <li><b>what is useRef</b></li>
+    <ul>
+    <li>The useRef Hook allows you to persist values between renders.</li>
+    
+    <li>It can be used to store a mutable value that does not cause a re-render when updated.</li>
+    <li>It can be used to access a DOM element directly.</li>
+    <li>If we tried to count how many times our application renders using the useState Hook, we would be caught in an infinite loop since this Hook itself causes a re-render.</li>
+    <li>To avoid this, we can use the useRef Hook.</li>
+    
+    </ul>
+    
+    
+    <li><b>what is Context API</b></li>
+    <ul>
+      <li>Context APIs are used to set the global data and this data 
+        can now be accessed in any of the children's components
+         without the need to pass it through every parent component.</li>
+    <li>example</li>
+    <li>Suppose there are three components namely, A, B and C. A is the parent component of B and B is the parent component of C. So, our component structure is as follows − A→B→C.</li>
+    <li>We have defined some data in A and want to handle it in component C.</li>
+    <li>we can use Context API which is used to handle the data centrally which can be accessed by any component without passing it to every parent component. </li>
+    
+    
+    
+    </ul>
+    
+    
+    Explain limitations of Context API over Redux.
+
+    Implementation
+    Differentiate between states and props.Explain with example
+    Explain React lifecycle
+    Implementation of Higher Order Component. And Implement its usage
+    Implementation of Pure Component in Class and Functional component both.
+    Explain React Hooks. useState useEffect
+    How are forms created in React?
+    What do you understand by refs in React? Explain useRef Hook
+    Explain the difference between useCallback and useMemo with the help of implementation
+    Explain the difference between useMemo and memo in React.
+    How to implement Not Found Page using React Router. ?
+
+    Implementation - Difficult
+    Show how the data flows through Redux?
+    What is the difference between mapStateToProps() and mapDispatchToProps() or useSelector and useDispatch Hook?
+    Explain context API and useContext Hook
+    Implement the Navigation bar using browser router
+    Explain the difference between Client Side Rendering and Server Side Rendering.
+
+    red-Assignment to students
+    green-Done in class
+
+
+
+</body>
+
+</html>
